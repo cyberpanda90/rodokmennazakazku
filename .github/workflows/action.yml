@@ -1,0 +1,68 @@
+name: 🚀 Deploy
+
+on:
+    push:
+        branches:
+            - develop
+            - master
+
+jobs:
+    deploy-cz-develop:
+        if: github.ref == 'refs/heads/develop'
+        name: CZ DEVELOP
+        runs-on: ubuntu-latest
+        steps:
+            - name: 🚚 Get latest code
+              uses: actions/checkout@v4
+
+            - name: 📂 Deploy to Server
+              run: bash .github/workflows/deploy.sh
+              env:
+                  FTP_HOST: ${{ vars.FTP_HOST }}
+                  FTP_USER: ${{ vars.FTP_USER_CZ_DEV }}
+                  FTP_PASSWORD: ${{ secrets.FTP_PASSWORD_CZ_DEV }}
+
+    deploy-sk-develop:
+        if: github.ref == 'refs/heads/develop'
+        name: SK DEVELOP
+        runs-on: ubuntu-latest
+        steps:
+            - name: 🚚 Get latest code
+              uses: actions/checkout@v4
+
+            - name: 📂 Deploy to Server
+              run: bash .github/workflows/deploy.sh
+              env:
+                  FTP_HOST: ${{ vars.FTP_HOST }}
+                  FTP_USER: ${{ vars.FTP_USER_SK_DEV }}
+                  FTP_PASSWORD: ${{ secrets.FTP_PASSWORD_SK_DEV }}
+
+    deploy-cz-prod:
+        if: github.ref == 'refs/heads/master'
+        name: CZ PRODUCTION
+        runs-on: ubuntu-latest
+        steps:
+            - name: 🚚 Get latest code
+              uses: actions/checkout@v4
+
+            - name: 📂 Deploy to Server
+              run: bash .github/workflows/deploy.sh
+              env:
+                  FTP_HOST: ${{ vars.FTP_HOST }}
+                  FTP_USER: ${{ vars.FTP_USER_CZ_PROD }}
+                  FTP_PASSWORD: ${{ secrets.FTP_PASSWORD_CZ_PROD }}
+
+    deploy-sk-prod:
+        if: github.ref == 'refs/heads/master'
+        name: SK PRODUCTION
+        runs-on: ubuntu-latest
+        steps:
+            - name: 🚚 Get latest code
+              uses: actions/checkout@v4
+
+            - name: 📂 Deploy to Server
+              run: bash .github/workflows/deploy.sh
+              env:
+                  FTP_HOST: ${{ vars.FTP_HOST }}
+                  FTP_USER: ${{ vars.FTP_USER_SK_PROD }}
+                  FTP_PASSWORD: ${{ secrets.FTP_PASSWORD_SK_PROD }}
