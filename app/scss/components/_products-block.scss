@@ -11,7 +11,7 @@
 		.p-in {
 			display: flex;
 			justify-content: space-between;
-			align-items: center;
+			align-items: flex-end;
 		}
 
 		.p-tools {
@@ -26,6 +26,7 @@
 			@include h2;
 
 			font-weight: $fw-bold;
+			white-space: nowrap;
 		}
 	}
 }
