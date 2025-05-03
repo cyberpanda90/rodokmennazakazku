@@ -6,4 +6,16 @@ input {
 	&[type='number'] {
 		@include input;
 	}
+
+	&[type='email'] {
+		@include input;
+	}
+
+	&[type='password'] {
+		@include input;
+	}
+
+	&[type='submit'] {
+		@include button;
+	}
 }
