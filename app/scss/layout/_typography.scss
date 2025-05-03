@@ -1,0 +1,25 @@
+body,
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-smooth: always;
+	font-family: $ff-base;
+	color: $c-text;
+	@include p;
+}
+
+h1 {
+	@include h1;
+}
+
+h2 {
+	@include h2;
+}
+
+p {
+	@include p;
+}
+
+a {
+	@include link;
+}

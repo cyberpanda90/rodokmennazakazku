@@ -1,0 +1,32 @@
+.navigation-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+
+	@include min-md {
+		//flex-direction: row;
+	}
+
+	ul {
+		&.menu-level-1 {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			padding-left: 0;
+			gap: $gap;
+			border-bottom: $border;
+
+			li {
+				list-style: none;
+
+				a {
+					text-decoration: none;
+					padding: $gap;
+					display: block;
+				}
+			}
+		}
+	}
+}

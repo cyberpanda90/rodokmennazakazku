@@ -1,0 +1,45 @@
+@mixin button($type: default) {
+	@if $type == 'primary' {
+		background-color: $c-primary;
+		color: $c-white;
+	} @else if $type == 'secondary' {
+		background-color: $c-secondary;
+		color: $c-white;
+	} @else if $type == 'invert' {
+		background-color: $c-white;
+		color: $c-gray-900;
+	} @else if $type == 'link' {
+		background-color: transparent;
+		color: $c-primary;
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	} @else if $type == 'link-invert' {
+		background-color: transparent;
+		color: $c-white;
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	} @else {
+		background-color: $c-gray-900;
+		color: $c-white;
+	}
+
+	padding: 10px 20px;
+	border-radius: $br;
+	border: none;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.8;
+	}
+}
+
+@mixin input {
+	padding: 8px;
+	border-radius: $br;
+	border: $border-light;
+}

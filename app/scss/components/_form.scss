@@ -1,0 +1,9 @@
+input {
+	&[type='text'] {
+		@include input;
+	}
+
+	&[type='number'] {
+		@include input;
+	}
+}

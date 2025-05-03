@@ -1,0 +1,45 @@
+@mixin title {
+	font-size: $fs-title;
+	font-weight: $fw-bold;
+	line-height: $lh-title;
+	margin-bottom: 1vw;
+}
+
+@mixin h1 {
+	font-size: $fs-h1;
+	font-weight: $fw-bold;
+	line-height: $lh-h1;
+	margin-bottom: 1vw;
+}
+
+@mixin h2 {
+	font-size: $fs-h2;
+	font-weight: $fw-normal;
+	line-height: $lh-h2;
+	margin-bottom: 1vw;
+}
+
+@mixin p {
+	font-size: $fs-p;
+	line-height: $lh-p;
+	margin-bottom: 1vw;
+}
+
+@mixin link {
+	color: $c-text;
+	text-decoration: underline;
+
+	&:hover {
+		color: $c-primary;
+	}
+}
+
+@mixin link-invert {
+	color: $c-white;
+	text-decoration: underline;
+
+	&:hover {
+		color: $c-white;
+		text-decoration: none;
+	}
+}

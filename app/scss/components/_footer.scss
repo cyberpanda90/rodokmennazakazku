@@ -1,0 +1,41 @@
+footer {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-top: calc($gap * 3);
+
+	.footer-bottom {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: flex-start;
+		gap: $gap;
+		font-size: 90%;
+		padding: $gap 0;
+
+		@include min-xs {
+			justify-content: center;
+		}
+	}
+
+	#signature {
+		.title {
+			display: none;
+		}
+	}
+
+	.copyright {
+		strong {
+			display: none;
+		}
+	}
+
+	.js-cookies-settings {
+		display: block;
+		width: 100%;
+
+		@include min-xs {
+			display: inline;
+		}
+	}
+}

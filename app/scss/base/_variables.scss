@@ -1,20 +1,15 @@
-// @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;400;500;600;700&display=swap');
-
 // paths
 $urlIcon: '/user/documents/mime/src/icon/';
 $urlImg: '/user/documents/mime/src/img/';
 
-$ff-base: 'League Spartan', sans-serif;
+$ff-base: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
 $fs-base: 16px; // base for 1rem
 
 // font-size
-$fs-h1: rem(50px);
-$fs-h2: rem(43px);
-$fs-h3: rem(28px);
-$fs-h4: rem(24px);
-$fs-h5: rem(22px);
-$fs-h6: rem(18px);
-$fs-p: rem(17px);
+$fs-title: clamp(3rem, 6vw, 8rem);
+$fs-h1: clamp(2rem, 5vw, 5rem);
+$fs-h2: clamp(1.2rem, 2vw, 2rem);
+$fs-p: clamp(1rem, 1vw, 1.2rem);
 
 // font-weight
 $fw-light: 300;
@@ -24,62 +19,31 @@ $fw-bold: 700;
 $fw-xbold: 900;
 
 // line-height
-$lh-h1: rem(58px);
-$lh-h2: rem(42px);
-$lh-h3: rem(36px);
-$lh-h4: rem(30px);
-$lh-h5: rem(26px);
-$lh-h6: rem(26px);
-$lh-p: rem(22px);
+$lh-title: clamp(3.2rem, 6.2vw, 8.2rem);
+$lh-h1: clamp(2.2rem, 5.2vw, 5.2rem);
+$lh-h2: clamp(1.4rem, 2.2vw, 2.2rem);
+$lh-p: clamp(1.2rem, 1.2vw, 1.7rem);
 
 // colors
-$c-black: #000000;
-$c-white: #ffffff;
+$c-black: #000;
+$c-white: #fff;
 
-$c-blue-100: #f6fdff;
-$c-blue-200: #d6e6ea;
-$c-blue-300: #eef8fc;
-$c-blue-400: #47d1e9;
-$c-blue-500: #41aedc;
-$c-blue-600: #256188;
-$c-blue-700: #12324f;
+$c-blue-400: #2b4d5b;
 
-$c-gray-100: #e5e5e5;
-$c-gray-200: #dadfe0;
-$c-gray-400: #cfdbde;
+$c-gray-200: #ccc;
+$c-gray-900: #222;
 
-$c-base: $c-black;
+$c-text: $c-gray-900;
 $c-primary: $c-blue-400;
-$c-secondary: $c-blue-700;
+$c-secondary: $c-gray-900;
 
-// border-radius
+// border
+$border: 2px solid $c-gray-900;
+$border-light: 1px solid $c-gray-200;
 $br: 5px;
 
-// shadows
-$shadow-primary: 0px 4px 34px rgba(18, 50, 79, 0.1);
-$shadow-secondary: 0px 4px 4px rgba(18, 50, 79, 0.1);
-
 // gaps
-$x0_5: 0.5rem;
-$x1: 1rem;
-$x1_5: 1.5rem;
-$x2: 2rem;
-$x2_5: 2.5rem;
-$x3: 3rem;
-$x3_5: 3.5rem;
-$x4: 4rem;
-$x4_5: 4.5rem;
-$x5: 5rem;
-$x5_5: 5.5rem;
-$x6: 6rem;
-$x6_5: 6.5rem;
-$x7: 7rem;
-$x7_5: 7.5rem;
-$x8: 8rem;
-$x8_5: 8.5rem;
-$x9: 9rem;
-$x9_5: 9.5rem;
-$x10: 10rem;
+$gap: 15px;
 
 // breakpoints
 $breakpoint-xs: 425px; // mobile devices
@@ -89,25 +53,8 @@ $breakpoint-lg: 992px; // desktop
 $breakpoint-xl: 1200px;
 $breakpoint-xxl: 1400px;
 
-// icons
-$icon-xs: rem(16px);
-$icon-sm: rem(19px);
-$icon-md: rem(30px);
-$icon-xxl: rem(135px);
-
-$w-logo: rem(231px);
-$h-logo: rem(98px);
-
 // grid
-$container-xs: $breakpoint-xs;
-$container-sm: $breakpoint-sm;
-$container-md: $breakpoint-md;
-$container-lg: $breakpoint-lg;
-$container-xl: $breakpoint-xl;
-$container-xxl: $breakpoint-xxl;
+$container: 1500px;
 
-$grid-gap-xs: rem(5px);
-$grid-gap-md: rem(10px);
-$grid-gap-lg: rem(20px);
-
+// animations
 $trans: all 0.3s ease;

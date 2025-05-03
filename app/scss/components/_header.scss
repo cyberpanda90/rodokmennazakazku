@@ -1,0 +1,14 @@
+#header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.site-name {
+		width: 250px;
+		margin-top: 50px;
+
+		img {
+			max-width: 100%;
+		}
+	}
+}

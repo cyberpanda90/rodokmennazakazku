@@ -1,0 +1,31 @@
+.products {
+	.p {
+		.image {
+			display: none;
+		}
+
+		.name {
+			@include h2;
+		}
+
+		.p-in {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.p-tools {
+			display: none;
+		}
+
+		.price-standard-wrapper {
+			display: none;
+		}
+
+		.price-final {
+			@include h2;
+
+			font-weight: $fw-bold;
+		}
+	}
+}

@@ -1,0 +1,27 @@
+#colorbox {
+	width: 80% !important;
+	max-width: 600px !important;
+	height: fit-content !important;
+	max-height: 80vh !important;
+	overflow: auto !important;
+	background: #fff !important;
+	border-radius: 10px !important;
+	padding: 20px !important;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+	position: fixed !important;
+	top: 50% !important;
+	left: 50% !important;
+	transform: translate(-50%, -50%) !important;
+	z-index: 11 !important;
+
+	#cboxWrapper,
+	#cboxContent,
+	#cboxLoadedContent {
+		width: 100% !important;
+		height: 100% !important;
+	}
+
+	#cboxClose {
+		display: none;
+	}
+}

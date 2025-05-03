@@ -1,0 +1,53 @@
+.in-index {
+	.homepage-box {
+		&.before-carousel {
+			position: absolute;
+			top: 0;
+			z-index: -1;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+		}
+	}
+
+	.welcome-wrapper {
+		flex-grow: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		.welcome {
+			h1 {
+				@include title;
+			}
+
+			> div > p {
+				@include h2;
+
+				br {
+					@include min-md {
+						display: none;
+					}
+				}
+			}
+
+			p:has(img) {
+				text-align: right;
+			}
+
+			img {
+				max-width: 100%;
+				width: 100%;
+				height: auto;
+
+				@include min-md {
+					width: 70%;
+				}
+			}
+		}
+	}
+}

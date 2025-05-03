@@ -1,0 +1,24 @@
+.overall-wrapper {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.content-wrapper-in {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.container {
+	width: 100%;
+	max-width: $container;
+}
+
+#content {
+	width: 100%;
+}
+
+#content-wrapper {
+	flex-grow: 1;
+}

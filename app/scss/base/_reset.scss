@@ -1,0 +1,23 @@
+.user-action,
+.search,
+.admin-bar,
+.top-navigation-bar,
+.menu-helper,
+.navigation-buttons,
+.in-index #content-wrapper,
+.navigationActions,
+.breadcrumbs-wrapper,
+#category-header,
+#filters-wrapper,
+.ratings-wrapper,
+.p-final-price-wrapper,
+.availability-value,
+.detail-parameters th,
+.p-detail-inner .p-code,
+.p-detail-inner .p-image-wrapper,
+.p-detail-inner p[data-testid='productCardDescr'],
+.social-buttons-wrapper,
+.shp-tabs-row,
+#tab-content h3 {
+	display: none !important;
+}
