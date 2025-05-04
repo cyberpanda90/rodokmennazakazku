@@ -11,4 +11,54 @@
 			max-width: 100%;
 		}
 	}
+
+	.navigation-buttons {
+		height: 65px;
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		border-top: $border-light;
+		background-color: $c-white;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		padding: $gap;
+		z-index: 1000;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		i {
+			display: none;
+		}
+
+		.sr-only {
+			font-size: 0;
+
+			&:before {
+				content: 'Orientační kalkulace:';
+				font-size: $fs-p;
+			}
+		}
+
+		a {
+			.cart-price {
+				font-size: 0;
+
+				&:before {
+					content: '0 Kč';
+					font-size: $fs-p;
+				}
+			}
+
+			&:has(i) {
+				.cart-price {
+					font-size: $fs-p;
+
+					&:before {
+						display: none;
+					}
+				}
+			}
+		}
+	}
 }

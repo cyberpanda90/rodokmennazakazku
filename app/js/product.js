@@ -1,66 +1,88 @@
-document.addEventListener('DOMContentLoaded', function () {
-	const select = document.getElementById('simple-variants-select')
-	if (!select) return
+function product() {
+	const replaceAddToCartButtonText = () => {
+		const addToCartButton = document.querySelector('.add-to-cart-button')
+		if (!addToCartButton) return
 
-	// Skryjeme originální select
-	select.style.display = 'none'
+		const originalText = addToCartButton.textContent.trim()
+		const newText = originalText.replace('Přidat do košíku', 'Přidat do poptávky')
+		addToCartButton.textContent = newText
+	}
 
-	// Vytvoříme kontejner pro nové UI
-	const wrapper = document.createElement('div')
-	wrapper.className = 'custom-variants-wrapper'
+	const replaceVariantSelectWithRadioButtons = () => {
+		const select = document.getElementById('simple-variants-select')
+		if (!select) return
 
-	// Přidáme jednotlivé možnosti jako radio buttony
-	Array.from(select.options).forEach((option, index) => {
-		if (option.value === '') return // Přeskočit placeholder
+		// Skryjeme originální select
+		select.style.display = 'none'
 
-		const radioId = `custom-variant-${index}`
+		// Vytvoříme kontejner pro nové UI
+		const wrapper = document.createElement('div')
+		wrapper.className = 'custom-variants-wrapper'
 
-		const div = document.createElement('label')
-		div.className = 'custom-variant-option'
-		div.htmlFor = radioId
+		// Přidáme jednotlivé možnosti jako radio buttony
+		Array.from(select.options).forEach((option, index) => {
+			if (option.value === '') return // Přeskočit placeholder
 
-		const labelDiv = document.createElement('div')
-		labelDiv.className = 'custom-variant-label'
+			const radioId = `custom-variant-${index}`
 
-		const radio = document.createElement('input')
-		radio.type = 'radio'
-		radio.name = 'custom-variant'
-		radio.value = option.value
-		radio.id = radioId
+			const div = document.createElement('label')
+			div.className = 'custom-variant-option'
+			div.htmlFor = radioId
 
-		if (option.selected) {
-			radio.checked = true
-		}
+			const labelDiv = document.createElement('div')
+			labelDiv.className = 'custom-variant-label'
 
-		// Vyčistíme text: odstraníme "Počet generací:", "Skladem", závorky atd.
-		let cleanText = option.textContent
-			.replace('Počet generací:', '')
-			.replace(/\s*[-–—]\s*Skladem.*/i, '') // odstraní pomlčku + Skladem + vše za tím
-			.replace(/\s*\(\s*[^)]*\)/g, '') // odstraní cenu v závorkách
-			.trim()
+			const radio = document.createElement('input')
+			radio.type = 'radio'
+			radio.name = 'custom-variant'
+			radio.value = option.value
+			radio.id = radioId
 
-		// Získáme cenu z atributu (je spolehlivější než parsování textu)
-		const price = option.getAttribute('data-customerprice')?.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' Kč' || ''
+			if (option.selected) {
+				radio.checked = true
+			}
 
-		const textSpan = document.createElement('span')
-		textSpan.textContent = cleanText
+			// Vyčistíme text: odstraníme "Počet generací:", "Skladem", závorky atd.
+			let cleanText = option.textContent
+				.replace('Počet generací:', '')
+				.replace(/\s*[-–—]\s*Skladem.*/i, '') // odstraní pomlčku + Skladem + vše za tím
+				.replace(/\s*\(\s*[^)]*\)/g, '') // odstraní cenu v závorkách
+				.trim()
 
-		const priceSpan = document.createElement('span')
-		priceSpan.textContent = price
+			// Získáme cenu z atributu (je spolehlivější než parsování textu)
+			const price = option.getAttribute('data-customerprice')?.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' Kč' || ''
 
-		radio.addEventListener('change', () => {
-			select.value = radio.value
-			const event = new Event('change', { bubbles: true })
-			select.dispatchEvent(event)
+			const textSpan = document.createElement('span')
+			textSpan.textContent = cleanText
+
+			const priceSpan = document.createElement('span')
+			priceSpan.textContent = price
+
+			radio.addEventListener('change', () => {
+				select.value = radio.value
+				const event = new Event('change', { bubbles: true })
+				select.dispatchEvent(event)
+			})
+
+			labelDiv.appendChild(radio)
+			labelDiv.appendChild(textSpan)
+			div.appendChild(labelDiv)
+			div.appendChild(priceSpan)
+			wrapper.appendChild(div)
 		})
 
-		labelDiv.appendChild(radio)
-		labelDiv.appendChild(textSpan)
-		div.appendChild(labelDiv)
-		div.appendChild(priceSpan)
-		wrapper.appendChild(div)
-	})
+		select.parentNode.insertBefore(wrapper, select)
+	}
 
-	// Vložíme nový UI před původní select
-	select.parentNode.insertBefore(wrapper, select)
-})
+	const replaceMsgs = () => {
+		MimeMessage.replaceText('Produkt byl přidán do nákupního košíku', 'Přidáno do poptávky')
+	}
+
+	const init = () => {
+		replaceAddToCartButtonText()
+		replaceVariantSelectWithRadioButtons()
+		replaceMsgs()
+	}
+
+	document.addEventListener('DOMContentLoaded', init)
+}

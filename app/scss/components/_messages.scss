@@ -1,0 +1,44 @@
+.messages {
+	position: fixed;
+	left: 0;
+	bottom: 65px;
+	z-index: 1000;
+	width: 100%;
+	padding: 0;
+
+	// if is empty, hide the messages
+	&:empty {
+		display: none;
+	}
+
+	.msg {
+		background-color: $c-white;
+		border-top: $border-light;
+		text-align: center;
+		font-size: $fs-p;
+		color: $c-text;
+
+		&-error {
+			border-color: $c-error;
+			background-color: $c-error;
+			color: $c-white;
+		}
+
+		&-success {
+			border-color: $c-success;
+			background-color: $c-success;
+			color: $c-white;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: $gap;
+			padding: $gap;
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+}
