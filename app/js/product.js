@@ -78,10 +78,26 @@ function product() {
 		MimeMessage.replaceText('Produkt byl přidán do nákupního košíku', 'Přidáno do poptávky')
 	}
 
+	const goToCart = () => {
+		const naviButton = document.querySelector('.navigation-buttons')
+		if (!naviButton) return
+
+		naviButton.addEventListener('click', (e) => {
+			e.preventDefault()
+
+			// go to /kosik
+			const cartUrl = window.location.origin + '/kosik'
+			if (cartUrl) {
+				window.location.href = cartUrl
+			}
+		})
+	}
+
 	const init = () => {
 		replaceAddToCartButtonText()
 		replaceVariantSelectWithRadioButtons()
 		replaceMsgs()
+		goToCart()
 	}
 
 	document.addEventListener('DOMContentLoaded', init)

@@ -5,6 +5,9 @@
 .menu-helper,
 .in-index #content-wrapper,
 .navigationActions,
+.in-index .navigation-buttons,
+.id--9 .navigation-buttons,
+.id--16 .navigation-buttons,
 .breadcrumbs-wrapper,
 #category-header,
 #filters-wrapper,
@@ -17,6 +20,11 @@
 .p-detail-inner p[data-testid='productCardDescr'],
 .social-buttons-wrapper,
 .shp-tabs-row,
-#tab-content h3 {
+#tab-content h3,
+.cart-header,
+.cart-p-image,
+.p-availability,
+.extra.delivery,
+.cart-summary h4 {
 	display: none !important;
 }

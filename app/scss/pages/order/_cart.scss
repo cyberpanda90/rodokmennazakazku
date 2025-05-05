@@ -1,0 +1,286 @@
+.id--9 {
+	.navigation-buttons,
+	.checkout-box-wrapper {
+		display: none !important;
+	}
+
+	.cart-content {
+		margin-top: $gap;
+
+		&:before {
+			content: 'Obsah poptávky';
+			display: block;
+
+			@include h1;
+		}
+
+		&.summary-wrapper {
+			margin-top: 0;
+		}
+
+		&.checkout-box-wrapper {
+			&:before {
+				display: none;
+			}
+		}
+
+		&.summary-wrapper {
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+	.cart-table {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		tbody {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+
+			tr {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				width: 100%;
+				padding: $gap 0;
+				border-bottom: $border-light;
+				align-items: center;
+
+				&:last-child {
+					border-bottom: 0;
+				}
+
+				td {
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+					padding: $gap 0;
+
+					@include min-md {
+						padding: $gap;
+						width: auto;
+					}
+
+					&:last-child {
+						flex-direction: row;
+						justify-content: flex-end;
+						align-items: center;
+						padding-right: 0;
+					}
+				}
+
+				.p-name {
+					padding-left: 0;
+					padding-right: 0;
+
+					@include min-md {
+						width: 100%;
+					}
+
+					@include min-lg {
+						width: auto;
+						flex-grow: 1;
+						min-width: 20%;
+					}
+				}
+
+				.p-quantity {
+					@include min-lg {
+						width: 20%;
+					}
+
+					.p-label {
+						@include min-lg {
+							display: none;
+						}
+					}
+
+					form {
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+
+						@include min-md {
+							gap: $gap;
+						}
+
+						@include min-lg {
+							justify-content: flex-start;
+						}
+					}
+				}
+
+				.p-total {
+					@include min-md {
+						flex-grow: 1;
+					}
+
+					@include min-lg {
+						flex-grow: 0;
+						width: 20%;
+						text-align: right;
+					}
+
+					.p-label {
+						flex-grow: 1;
+
+						@include min-md {
+							display: none;
+						}
+					}
+
+					button {
+						font-size: 0;
+						margin-left: $gap;
+
+						@include button('red');
+
+						&:before {
+							content: '✕';
+							font-size: $fs-p;
+						}
+					}
+				}
+
+				.p-price {
+					flex-direction: row;
+
+					@include min-lg {
+						width: 15%;
+					}
+
+					.p-label {
+						flex-grow: 1;
+
+						@include min-md {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.price-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+
+		@include min-lg {
+			display: block;
+			text-align: right;
+			margin-bottom: calc($gap * 3);
+		}
+
+		&:before {
+			content: 'Cena poptávky je pouze orientační. Reálná cenová nabídka bude stanovena po upřesnění poptávky. Výsledná cenová nabídka je nezávazná.';
+			display: block;
+			font-size: $fs-p;
+			margin-bottom: $gap;
+			border-bottom: $border-light;
+			padding: $gap;
+			background: $c-info;
+			width: calc(100% - (2 * $gap));
+			text-align: left;
+
+			@include min-lg {
+				margin-bottom: calc($gap * 3);
+			}
+		}
+
+		> * {
+			width: 50%;
+			padding: $gap 0;
+
+			@include min-md {
+				width: auto;
+			}
+		}
+
+		.price-label {
+			&.price-primary {
+				font-size: 0;
+
+				&:before {
+					content: 'Orientační cena:';
+					font-size: $fs-p;
+
+					@include min-lg {
+						margin-right: $gap;
+					}
+				}
+			}
+
+			&.price-secondary {
+				&:before {
+					@include min-lg {
+						content: '';
+						width: 100%;
+						display: block;
+					}
+				}
+			}
+		}
+
+		.price {
+			text-align: right;
+
+			&.price-secondary {
+				@include min-lg {
+					margin-left: $gap;
+				}
+			}
+		}
+	}
+
+	.next-step {
+		display: flex;
+		align-items: center;
+		gap: $gap;
+		margin-top: $gap;
+		margin-bottom: $gap;
+
+		@include min-lg {
+			justify-content: flex-end;
+			margin-top: calc($gap * 3);
+			margin-bottom: calc($gap * 3);
+			gap: calc($gap * 3);
+		}
+
+		> a {
+			width: 50%;
+			padding: $gap 0;
+			text-align: center;
+			margin: 0;
+			border-radius: $br;
+
+			@include min-lg {
+				width: auto;
+			}
+
+			&.next-step-forward {
+				background-color: $c-primary;
+				color: $c-white;
+				text-decoration: none;
+
+				@include min-lg {
+					padding: $gap;
+				}
+			}
+
+			&.next-step-back {
+				font-size: 0;
+
+				&:before {
+					content: 'Zpět na výběr';
+					font-size: $fs-p;
+				}
+			}
+		}
+	}
+}

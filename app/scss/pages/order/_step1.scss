@@ -1,0 +1,33 @@
+.id--16 {
+	#checkoutContent {
+		.cart-content {
+			&:before {
+				content: 'Rekapitulace poptávky';
+				display: block;
+
+				@include h1;
+			}
+
+			.co-delivery-method,
+			.co-payment-method,
+			#order-form {
+				display: none !important;
+			}
+		}
+	}
+
+	.order-summary {
+		.checkout-box {
+			display: none;
+		}
+
+		h4 {
+			display: none;
+		}
+	}
+
+	.cart-items {
+		display: flex;
+		flex-direction: column;
+	}
+}

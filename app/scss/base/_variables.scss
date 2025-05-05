@@ -28,6 +28,7 @@ $lh-p: clamp(1.2rem, 1.2vw, 1.7rem);
 $c-black: #000;
 $c-white: #fff;
 
+$c-blue-200: #9addf2;
 $c-blue-400: #2b4d5b;
 
 $c-red-400: #d9534f;
@@ -42,6 +43,7 @@ $c-primary: $c-blue-400;
 $c-secondary: $c-gray-900;
 $c-error: $c-red-400;
 $c-success: $c-green-400;
+$c-info: $c-blue-200;
 
 // border
 $border: 2px solid $c-gray-900;

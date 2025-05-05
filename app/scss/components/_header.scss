@@ -27,6 +27,10 @@
 		align-items: center;
 		justify-content: center;
 
+		.toggle-window {
+			pointer-events: none;
+		}
+
 		i {
 			display: none;
 		}

@@ -22,6 +22,9 @@
 		&:hover {
 			text-decoration: none;
 		}
+	} @else if $type == 'red' {
+		background-color: $c-red-400;
+		color: $c-white;
 	} @else {
 		background-color: $c-gray-900;
 		color: $c-white;
